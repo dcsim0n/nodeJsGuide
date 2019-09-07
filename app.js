@@ -5,12 +5,13 @@
 */
 
 const http = require('http');
+const userform = require('./userform');
 
 
 
 const handler = ( req, res ) =>{
   if( req.url === '/' ){
-    res.write("<html><head><title>Hello</title></head><body><h1>Hello world</h1></body></html>");
+    res.write( userform );
     return res.end();
   }
 
@@ -18,6 +19,20 @@ const handler = ( req, res ) =>{
     res.write("<html><ol><li>Bob</li><li>Jill</li><li>Jane</li></ol></html>");
     return res.end();
   }
+
+  if ( req.url === '/create-user' ){
+    let body = [];
+    req.on('data', (chunk) => {
+      body.push(chunk);
+    })
+    req.on('end', () => {
+      const body1 = Buffer.concat(body).toString();
+      // at this point, `body` has the entire request body stored in it as a string
+      console.log(body1);
+    });
+    return res.end()
+  }
+
 }
 
 const server = http.createServer(handler);
