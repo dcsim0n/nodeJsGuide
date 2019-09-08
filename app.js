@@ -16,10 +16,10 @@ const app = express();
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(adminRoutes);
-app.use(shopRoutes);
+app.use( '/admin', adminRoutes );
+app.use( shopRoutes );
 
 //Handle invalid routes
 app.use(( req, res, next ) => {
