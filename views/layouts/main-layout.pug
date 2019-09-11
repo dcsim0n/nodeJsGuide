@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{pageTitle}
+    link(rel="stylesheet",href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    block styles
+  body
+    header.main-header
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        ul.navbar-nav
+          li.nav-item
+            a(href="/",class=path==='/' ? 'nav-link active' : 'nav-link') Shop
+          li.nav-item
+            a(href="/admin/add-product",class=path==='/admin/add-product' ? "nav-link active" : "nav-link") Add Product
+    block content

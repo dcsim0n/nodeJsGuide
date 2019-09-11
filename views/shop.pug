@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title My Shop
-    link(rel="stylesheet", href="css/main.css")
+extends layouts/main-layout
 
-  body
-    header.main-header
-      nav.main-header_nav
-        ul.main-header-item-list
-          li.main-header_item
-            a.active(href="/") Shop
-            a.active(href="/admin/add-product") Add Product
+block content
+  h1 Main Shop

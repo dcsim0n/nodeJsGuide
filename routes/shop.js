@@ -15,7 +15,7 @@ const rootDir = require('../util/path');
 
 
 router.get( '/', ( req, res, next ) =>{
-  res.render('shop');
+  res.render('shop', {path: "/"});
 })
 
 module.exports = router;
